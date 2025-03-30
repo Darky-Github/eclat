@@ -1,0 +1,16 @@
+
+---
+
+### **`.gitignore`**
+```plaintext
+# Ignore compiled binaries
+utouch
+
+# Ignore temp files
+*.o
+*.swp
+*.bak
+*.tmp
+
+# Ignore logs
+*.log
