@@ -19,4 +19,30 @@ git clone https://github.com/yourusername/utouch.git
 cd utouch
 make
 sudo cp utouch /usr/local/bin/
+```
 
+## Usage
+Create file:
+```bash
+utouch file.txt
+```
+Delete a file:
+```bash
+utouch -r file.txt
+```
+View a file:
+```bash
+utouch file.txt
+```
+Edit a file
+```bash
+utouch -e file.txt
+```
+For more information use:
+```bash
+utouch -h
+```
+Note: *You can always enter any name for you file with any extension*
+
+## License
+This project is licensed under the MIT license.
