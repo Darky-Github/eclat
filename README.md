@@ -3,6 +3,9 @@
 `utouch` is a **lightweight and intuitive** command-line utility for managing files on Linux.  
 It combines the functionality of `touch`, `rm`, and a **basic text editor** into a single tool!
 
+## Star and Follow
+- If you like my projects or find utouch useful then **star** and **follow** me! Thank you!
+
 ## ✨ Features:
 - 📁 **Create a file** if it doesn't exist.
 - 📖 **Read a file** (if it exists).
