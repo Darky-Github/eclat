@@ -1,16 +1,15 @@
-
----
-
-### **`.gitignore`**
-```plaintext
 # Ignore compiled binaries
 utouch
 
-# Ignore temp files
+# Ignore object files
 *.o
+
+# Ignore backup and temporary files
 *.swp
 *.bak
 *.tmp
-
-# Ignore logs
 *.log
+
+# Ignore core dumps and debugging files
+core
+*.core
