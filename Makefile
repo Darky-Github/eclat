@@ -1,10 +1,18 @@
-CC=gcc
-CFLAGS=-Wall -Wextra -O2
+CC = gcc
+CFLAGS = -Wall -Wextra -O2
+TARGET = utouch
+SRC = utouch.c
 
-all: utouch
+all: $(TARGET)
 
-utouch: utouch.c
-	$(CC) $(CFLAGS) utouch.c -o utouch
+$(TARGET): $(SRC)
+	$(CC) $(CFLAGS) $(SRC) -o $(TARGET)
+
+install: $(TARGET)
+	sudo cp $(TARGET) /usr/local/bin/
+
+uninstall:
+	sudo rm -f /usr/local/bin/$(TARGET)
 
 clean:
-	rm -f utouch
+	rm -f $(TARGET)
