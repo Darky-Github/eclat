@@ -23,7 +23,7 @@ If you like my projects or find `utouch` useful, please **star** this repository
 
 ## Installation:
 ```bash
-git clone https://github.com/yourusername/utouch.git
+git clone https://github.com/Darky-Github/utouch.git
 cd utouch
 make
 sudo make install
