@@ -18,4 +18,4 @@ clean:
     rm -f $(TARGET)
 
 check: $(TARGET)
-    ./$(TARGET) # Replace this line with actual tests or input if needed
+    ./$(TARGET)  # Replace this line with actual test cases if applicable
