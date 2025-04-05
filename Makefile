@@ -6,13 +6,16 @@ SRC = utouch.c
 all: $(TARGET)
 
 $(TARGET): $(SRC)
-	$(CC) $(CFLAGS) $(SRC) -o $(TARGET)
+    $(CC) $(CFLAGS) $(SRC) -o $(TARGET)
 
 install: $(TARGET)
-	sudo cp $(TARGET) /usr/local/bin/
+    sudo cp $(TARGET) /usr/local/bin/
 
 uninstall:
-	sudo rm -f /usr/local/bin/$(TARGET)
+    sudo rm -f /usr/local/bin/$(TARGET)
 
 clean:
-	rm -f $(TARGET)
+    rm -f $(TARGET)
+
+check: $(TARGET)
+    ./$(TARGET) # Replace this line with actual tests or input if needed
