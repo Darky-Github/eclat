@@ -1,30 +1,30 @@
-# utouch - A Simple Yet Powerful File Manager for Linux
+# eclat - A Simple Yet Powerful File Manager for Linux
 
-`utouch` is a **lightweight and intuitive** command-line utility for managing files on Linux.  
+`eclat` is a **lightweight and intuitive** command-line utility for managing files on Linux.  
 It combines the functionality of `touch`, `rm`, and a **basic text editor** into a single tool!
 
 ## Star and Follow
-If you like my projects or find `utouch` useful, please **star** this repository and **follow** me for more! Thank you!
+If you like my projects or find `eclat` useful, please **star** this repository and **follow** me for more! Thank you!
 
 ---
 
 ## Features:
 - **Create a file** if it doesn't exist.
 - **Read a file** (if it exists).
-- **Delete files safely** using `utouch -r`.
-- **Edit files interactively** with basic text operations (`utouch -e`).
+- **Delete files safely** using `eclat -r`.
+- **Edit files interactively** with basic text operations (`eclat -e`).
   - **Type** to add lines.
   - **`-d`** deletes the last line.
   - **`Ctrl+W`** saves and exits.
   - **`Ctrl+Q`** quits without saving.
-- **Update file timestamps** (like `touch`) using `utouch -t filename`.
+- **Update file timestamps** (like `touch`) using `eclat -t filename`.
 
 ---
 
 ## Installation:
 ```bash
-git clone https://github.com/Darky-Github/utouch.git
-cd utouch
+git clone https://github.com/Darky-Github/eclat.git
+cd eclat
 make
 sudo make install
 ```
@@ -37,30 +37,30 @@ sudo make uninstall
 # Usage
 Creating and Reading a file:
 ```bash
-utouch file.txt
+eclat file.txt
 ```
 Editing
 ```bash
-utouch -e file.txt
+eclat -e file.txt
 ```
 Deleting
 ```bash
-utouch -r file.txt
+eclat -r file.txt
 ```
 Timestamp
 ```bash
-utouch -t file.txt
+eclat -t file.txt
 ```
 Help menu
 ```bash
-utouch -h
+eclat -h
 ```
 
-## 🔥 Why Use `utouch` Instead of `touch`?
+## Why Use `eclat` Instead of `touch`?
 
-Unlike `touch`, which only creates files and updates timestamps, `utouch` **adds more functionality** without extra commands.
+Unlike `touch`, which only creates files and updates timestamps, `eclat` **adds more functionality** without extra commands.
 
-| Feature             | `touch` | `utouch` |
+| Feature             | `touch` | `eclat` |
 |---------------------|:------:|:--------:|
 | Create files        | ✅     | ✅       |
 | Read files         | ❌     | ✅       |
@@ -70,7 +70,7 @@ Unlike `touch`, which only creates files and updates timestamps, `utouch` **adds
 | Interactive Editing | ❌     | ✅ (`-e`) |
 | Help Menu          | ❌     | ✅ (`-h`) |
 
-**`utouch` combines `touch`, `rm`, and `nano` into one simple command!**
+**`eclat` combines `touch`, `rm`, and a simple `nano-like' into one simple command!**
 
 # LICENSE
 This project is licensed under the MIT license.
@@ -79,3 +79,5 @@ This project is licensed under the MIT license.
 - Star this project
 - Follow me
 - Recommend to other users
+
+Old name: utouch
