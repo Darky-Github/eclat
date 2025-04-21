@@ -63,11 +63,11 @@ void update_timestamp(const char *filename) {
 // Function to display help
 void show_help() {
     printf("Usage:\n");
-    printf("  utouch <filename>    - Create file if not exists, else read it\n");
-    printf("  utouch -r <filename> - Delete a file\n");
-    printf("  utouch -e <filename> - Edit a file (write/delete lines)\n");
-    printf("  utouch -t <filename> - Update timestamp (like 'touch')\n");
-    printf("  utouch -h            - Show this help message\n");
+    printf("  eclat <filename>    - Create file if not exists, else read it\n");
+    printf("  eclat -r <filename> - Delete a file\n");
+    printf("  eclat -e <filename> - Edit a file (write/delete lines)\n");
+    printf("  eclat -t <filename> - Update timestamp (like 'touch')\n");
+    printf("  eclat -h            - Show this help message\n");
 }
 
 int main(int argc, char *argv[]) {
