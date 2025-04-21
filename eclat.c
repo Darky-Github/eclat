@@ -5,7 +5,7 @@
 #include <sys/time.h>
 #include <unistd.h>
 
-// Function to check if a file exists
+// Function to check if a file or directory exists
 int file_exists(const char *filename) {
     return access(filename, F_OK) == 0;
 }
@@ -60,6 +60,36 @@ void update_timestamp(const char *filename) {
     }
 }
 
+// Function to create a directory with enhanced features
+void create_directory(const char *path, int create_parents, int use_timestamp, mode_t permissions) {
+    char dir_path[1024];
+    strcpy(dir_path, path);
+
+    // Optionally add timestamp to directory name
+    if (use_timestamp) {
+        char timestamp[20];
+        struct timeval tv;
+        gettimeofday(&tv, NULL);
+        snprintf(timestamp, sizeof(timestamp), "_%ld", tv.tv_sec);
+        strcat(dir_path, timestamp);
+    }
+
+    // Create parent directories if needed
+    if (create_parents) {
+        if (mkdir(dir_path, permissions) == -1) {
+            perror("Error creating directory");
+        } else {
+            printf("Directory '%s' created successfully with parents.\n", dir_path);
+        }
+    } else {
+        if (mkdir(dir_path, permissions) == -1) {
+            perror("Error creating directory");
+        } else {
+            printf("Directory '%s' created successfully.\n", dir_path);
+        }
+    }
+}
+
 // Function to display help
 void show_help() {
     printf("Usage:\n");
@@ -67,6 +97,8 @@ void show_help() {
     printf("  eclat -r <filename> - Delete a file\n");
     printf("  eclat -e <filename> - Edit a file (write/delete lines)\n");
     printf("  eclat -t <filename> - Update timestamp (like 'touch')\n");
+    printf("  eclat -d <dirname>  - Create directory\n");
+    printf("  eclat -d <dirname> --parents - Create directory and parents if needed\n");
     printf("  eclat -h            - Show this help message\n");
 }
 
@@ -93,6 +125,26 @@ int main(int argc, char *argv[]) {
             create_file(argv[2]); // If file doesn't exist, create it
         }
         update_timestamp(argv[2]);
+    } else if (strcmp(argv[1], "-d") == 0) {
+        if (argc < 3) {
+            printf("Error: Missing directory name.\n");
+            return 1;
+        }
+
+        int create_parents = 0;
+        int use_timestamp = 0;
+        mode_t permissions = 0755;  // Default permissions
+
+        // Check for additional flags
+        for (int i = 3; i < argc; i++) {
+            if (strcmp(argv[i], "--parents") == 0) {
+                create_parents = 1;
+            } else if (strcmp(argv[i], "--timestamp") == 0) {
+                use_timestamp = 1;
+            }
+        }
+
+        create_directory(argv[2], create_parents, use_timestamp, permissions);
     } else {
         if (!file_exists(argv[1])) {
             create_file(argv[1]);
